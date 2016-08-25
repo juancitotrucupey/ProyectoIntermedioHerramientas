@@ -1,8 +1,9 @@
 #include <iostream>
 #include <cmath>
 #include "Random64.h"
+#include "linear.h"
 //N es la cantidad de unidades basicas que existen
-const int N=10000;
+const int N=100000;
 //Eta es la probabilidad de que se fragmente alguno de los grupos
 const double Eta=0.01; 
 using namespace std;
@@ -11,18 +12,28 @@ class M19{
 	private:
   //Se guarda la cantidad de unidades que existen
   int Cantidad;
+  int CantHist;
   //En cada celda se guarda la información del poder de ataque de la unidad, se organizan de izquierda a derecha (mayor a menor), si no hay unidades en la celda se pone un cero.
   int n[N+3];
+  double hist[N][2];
+  double loghist[N][2];
+  
 	public:
   void Inicie(void);
   void Evolucione(Crandom & Ran);
   void Reorganice(void);
   void Imprimase(void);
-	        };
+  void Histograma(void);
+  void FitLinear(void);
+ };
 
 void M19::Inicie(void){
   //Se inicia con N unidades con poder de ataque 1
-  for(int i=0;i<N;i++) {n[i]=1;}
+  for(int i=0;i<N;i++) {
+    n[i]=1;
+    hist[i][0]=hist[i][1]=0;
+    loghist[i][0]=hist[i][1]=0;
+  }
   //n[N] indica si se separó un unidad o se unio con otra. n[N+1] si se separó indica la posicion de la inicial que se separó, si se unieron indica uno de los lugares de las que se unieron. n[N+2] si se unieron indica el lugar de la segunda unidad que participó
   n[N]=n[N+1]=n[N+2]=3;
   //Cantidad inicial de unidades
@@ -113,6 +124,43 @@ void M19::Reorganice(void){
 void M19::Imprimase(void){
   for(int i=0;i<Cantidad;i++){cout<<n[i]<<endl;}
   }
+//Se genera el histograma
+void M19::Histograma(void){
+  int Tam=n[0];
+  bool Cambio=false;
+  int jj=0,kk=0,ii;
+  //Creación del histograma
+  for(ii=Tam;ii>0;ii--){
+    while(n[jj]==ii){
+    hist[kk][0]=ii;
+    hist[kk][1]+=1;
+    jj++;
+    Cambio=true;
+    }
+    if((n[jj]!=ii)&&(Cambio==true)){
+      kk++;
+      Cambio=false;}
+}
+  CantHist=kk+1;
+  for(ii=0;ii<CantHist;ii++){
+    hist[ii][1]/=N;}
+  for(ii=0;ii<CantHist;ii++){
+    loghist[ii][0]=log(hist[ii][0]);
+    loghist[ii][1]=log(hist[ii][1]);
+}
+}
+void M19::FitLinear(void){
+  double x[CantHist-1],y[CantHist-1];
+  for(int ii=0;ii<CantHist-1;ii++){
+    x[ii]=loghist[ii][0];
+    y[ii]=loghist[ii][1];   
+    //  cout<<x[ii]<<" "<<y[ii]<<endl;
+  }
+  Maths::Regression::Linear A(CantHist, x, y);
+  cout << "    Slope = " << A.getSlope() << endl;
+  cout << "Intercept = " << A.getIntercept() << endl << endl;
+  cout << "Regression coefficient = " << A.getCoefficient() << endl;
+  }
 int main(void){
   M19 Frente;
   Crandom ran2(1);
@@ -121,7 +169,12 @@ int main(void){
   for(t=0;t<tmax;t++){
     Frente.Evolucione(ran2);
     Frente.Reorganice();
-  }
-   Frente.Imprimase();
+    if((t>=990000)&&((t%1000)==0)){
+	cout<<t<<endl;
+	Frente.Histograma();
+	Frente.FitLinear();
+	}
+      }
+  
   return 0;
 }
