@@ -160,20 +160,22 @@ void M19::Histograma(void){
   
   CantHist=kk;
   
-  for(ii=0;ii<CantHist;ii++){
+  for(ii=CantHist-1;ii>=0;ii--){
     hist2[ii]/=N;
-    //Poner solo los puntos con una frecuencia mayor a 10^{-4}
-    /*
-    if(hist2[ii]<=1e-4){
-      error+=1;}
-    */ }
-
+    }
+  //Poner solo aqueyos grupos con probabilidad mayor a 10/N
+   for(ii=CantHist-1;ii>=0;ii--){
+   if(hist2[ii]<(10.0/N)){
+      error=ii;
+      ii=-1;}
+   }
   //Quitar los grupos desde el mayor hasta que alguno aparezca más de una vez
+  /*
   for(ii=0;ii<CantHist;ii++){
     error+=1;
     if(hist2[ii]>1.0/N){ii=CantHist;}
   }
-  
+  */
   for(ii=0;ii<CantHist;ii++){
     loghist1[ii]=log(hist1[ii]);
     loghist2[ii]=log(hist2[ii]);
@@ -201,7 +203,7 @@ void M19::FitLinear(void){
   }
 int main(void){
   M19 Frente;
-  Crandom ran2(3);
+  Crandom ran2(0);
   int t,tmax=1000000;//Tiempo maximo de la simulación
   double tt;
   Frente.Inicie();
