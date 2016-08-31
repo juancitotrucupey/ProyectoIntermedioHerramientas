@@ -7,7 +7,7 @@
 const int N=100000;
 
 //Eta es la probabilidad de que se fragmente alguno de los grupos
-const double Eta=0.5;
+const double Eta=0.1;
 
 using namespace std;
 
@@ -44,15 +44,16 @@ loghist2=new double[N];
 }
 void M19::Inicie(void){
   //Se inicia con N unidades con poder de ataque 1
-  for(int i=0;i<N;i++) {
-    n[i]=1;
+  for(int i=1;i<N;i++) {
+    n[i]=0;
     hist1[i]=hist2[i]=0.0;
     loghist1[i]=hist2[i]=0.0;
   }
+  n[0]=N;
   //n[N] indica si se separó un unidad o se unio con otra. n[N+1] si se separó indica la posicion de la inicial que se separó, si se unieron indica uno de los lugares de las que se unieron. n[N+2] si se unieron indica el lugar de la segunda unidad que participó
   n[N]=n[N+1]=n[N+2]=3;
   //Cantidad inicial de unidades
-  Cantidad=N;
+  Cantidad=1;
 }
 
 void M19::Evolucione(Crandom & Ran){
@@ -137,7 +138,10 @@ void M19::Reorganice(void){
 }
 //Se genera una lista de la potencia de ataque de cada unidad
 void M19::Imprimase(void){
-  for(int i=0;i<Cantidad;i++){cout<<n[i]<<endl;}
+  //  for(int i=0;i<Cantidad;i++){cout<<n[i]<<endl;}
+  for(int ii=error;ii<CantHist;ii++){
+    cout<<loghist1[ii]<<" "<<loghist2[ii]<<endl;
+  }
   }
 //Se genera el histograma
 void M19::Histograma(void){
@@ -203,20 +207,25 @@ void M19::FitLinear(void){
   }
 int main(void){
   M19 Frente;
-  Crandom ran2(4);
+  Crandom ran2(0);
   int t,tmax=1000000;//Tiempo maximo de la simulación
   double tt;
   Frente.Inicie();
   for(tt=0;tt<tmax;tt+=1){
      Frente.Evolucione(ran2);
      Frente.Reorganice();
+     // Se obtiene las pendientes en funcion del tiempo
     t=(int)tt;
-    if((t>=10000)&&(t%10000)==0){
+    if((t>=1)){
       cout<<tt/tmax<<" ";
       	Frente.Histograma();
        	Frente.FitLinear();
 	}
       }
-  
+  //Se obtiene el histograma de los datos
+  /*
+  Frente.Histograma();
+  Frente.Imprimase();
+  */
   return 0;
 }

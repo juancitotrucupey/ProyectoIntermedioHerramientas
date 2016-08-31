@@ -90,7 +90,7 @@
 @timestamp rot 0
 @timestamp font 0
 @timestamp char size 1.000000
-@timestamp def "Tue Aug 30 23:38:36 2016"
+@timestamp def "Wed Aug 31 06:53:57 2016"
 @r0 off
 @link r0 to g0
 @r0 type above
@@ -137,7 +137,7 @@
 @g0 fixedpoint format general general
 @g0 fixedpoint prec 6, 6
 @with g0
-@    world 0.6, -3, 1, -2.5
+@    world 0, -5.5, 1, -2
 @    stack world 0, 0, 0, 0
 @    znorm 1
 @    view 0.150000, 0.150000, 1.150000, 0.850000
@@ -160,10 +160,10 @@
 @    xaxis  bar color 1
 @    xaxis  bar linestyle 1
 @    xaxis  bar linewidth 1.0
-@    xaxis  label ""
+@    xaxis  label "t / t\smax\N"
 @    xaxis  label layout para
 @    xaxis  label place auto
-@    xaxis  label char size 1.000000
+@    xaxis  label char size 2.000000
 @    xaxis  label font 0
 @    xaxis  label color 1
 @    xaxis  label place normal
@@ -211,10 +211,10 @@
 @    yaxis  bar color 1
 @    yaxis  bar linestyle 1
 @    yaxis  bar linewidth 1.0
-@    yaxis  label ""
+@    yaxis  label "Pendiente ajuste lineal"
 @    yaxis  label layout para
 @    yaxis  label place auto
-@    yaxis  label char size 1.000000
+@    yaxis  label char size 1.500000
 @    yaxis  label font 0
 @    yaxis  label color 1
 @    yaxis  label place normal
@@ -259,7 +259,7 @@
 @    altyaxis  off
 @    legend on
 @    legend loctype view
-@    legend 0.85, 0.8
+@    legend 0.7, 0.8
 @    legend box color 1
 @    legend box pattern 1
 @    legend box linewidth 1.0
@@ -282,12 +282,12 @@
 @    frame background pattern 0
 @    s0 hidden false
 @    s0 type xy
-@    s0 symbol 0
-@    s0 symbol size 1.000000
+@    s0 symbol 1
+@    s0 symbol size 0.500000
 @    s0 symbol color 1
 @    s0 symbol pattern 1
 @    s0 symbol fill color 1
-@    s0 symbol fill pattern 0
+@    s0 symbol fill pattern 1
 @    s0 symbol linewidth 1.0
 @    s0 symbol linestyle 1
 @    s0 symbol char 65
@@ -327,9 +327,9 @@
 @    s0 errorbar riser linestyle 1
 @    s0 errorbar riser clip off
 @    s0 errorbar riser clip length 0.100000
-@    s0 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s0 comment "0.1.agr"
 @    s0 legend  ""
-@    s1 hidden false
+@    s1 hidden true
 @    s1 type xy
 @    s1 symbol 0
 @    s1 symbol size 1.000000
@@ -376,9 +376,9 @@
 @    s1 errorbar riser linestyle 1
 @    s1 errorbar riser clip off
 @    s1 errorbar riser clip length 0.100000
-@    s1 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s1 comment "0.1.agr"
 @    s1 legend  ""
-@    s2 hidden false
+@    s2 hidden true
 @    s2 type xy
 @    s2 symbol 0
 @    s2 symbol size 1.000000
@@ -425,9 +425,9 @@
 @    s2 errorbar riser linestyle 1
 @    s2 errorbar riser clip off
 @    s2 errorbar riser clip length 0.100000
-@    s2 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s2 comment "0.1.agr"
 @    s2 legend  ""
-@    s3 hidden false
+@    s3 hidden true
 @    s3 type xy
 @    s3 symbol 0
 @    s3 symbol size 1.000000
@@ -474,9 +474,9 @@
 @    s3 errorbar riser linestyle 1
 @    s3 errorbar riser clip off
 @    s3 errorbar riser clip length 0.100000
-@    s3 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s3 comment "0.1.agr"
 @    s3 legend  ""
-@    s4 hidden false
+@    s4 hidden true
 @    s4 type xy
 @    s4 symbol 0
 @    s4 symbol size 1.000000
@@ -523,9 +523,9 @@
 @    s4 errorbar riser linestyle 1
 @    s4 errorbar riser clip off
 @    s4 errorbar riser clip length 0.100000
-@    s4 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s4 comment "0.1.agr"
 @    s4 legend  ""
-@    s5 hidden false
+@    s5 hidden true
 @    s5 type xy
 @    s5 symbol 0
 @    s5 symbol size 1.000000
@@ -572,9 +572,9 @@
 @    s5 errorbar riser linestyle 1
 @    s5 errorbar riser clip off
 @    s5 errorbar riser clip length 0.100000
-@    s5 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s5 comment "0.1.agr"
 @    s5 legend  ""
-@    s6 hidden false
+@    s6 hidden true
 @    s6 type xy
 @    s6 symbol 0
 @    s6 symbol size 1.000000
@@ -621,9 +621,9 @@
 @    s6 errorbar riser linestyle 1
 @    s6 errorbar riser clip off
 @    s6 errorbar riser clip length 0.100000
-@    s6 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s6 comment "0.1.agr"
 @    s6 legend  ""
-@    s7 hidden false
+@    s7 hidden true
 @    s7 type xy
 @    s7 symbol 0
 @    s7 symbol size 1.000000
@@ -670,9 +670,9 @@
 @    s7 errorbar riser linestyle 1
 @    s7 errorbar riser clip off
 @    s7 errorbar riser clip length 0.100000
-@    s7 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s7 comment "0.1.agr"
 @    s7 legend  ""
-@    s8 hidden false
+@    s8 hidden true
 @    s8 type xy
 @    s8 symbol 0
 @    s8 symbol size 1.000000
@@ -719,9 +719,9 @@
 @    s8 errorbar riser linestyle 1
 @    s8 errorbar riser clip off
 @    s8 errorbar riser clip length 0.100000
-@    s8 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s8 comment "0.1.agr"
 @    s8 legend  ""
-@    s9 hidden false
+@    s9 hidden true
 @    s9 type xy
 @    s9 symbol 0
 @    s9 symbol size 1.000000
@@ -768,25 +768,25 @@
 @    s9 errorbar riser linestyle 1
 @    s9 errorbar riser clip off
 @    s9 errorbar riser clip length 0.100000
-@    s9 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s9 comment "0.1.agr"
 @    s9 legend  ""
 @    s10 hidden false
 @    s10 type xy
 @    s10 symbol 0
-@    s10 symbol size 1.000000
-@    s10 symbol color 11
+@    s10 symbol size 0.750000
+@    s10 symbol color 2
 @    s10 symbol pattern 1
-@    s10 symbol fill color 11
+@    s10 symbol fill color 2
 @    s10 symbol fill pattern 0
-@    s10 symbol linewidth 1.0
+@    s10 symbol linewidth 3.0
 @    s10 symbol linestyle 1
 @    s10 symbol char 65
 @    s10 symbol char font 0
 @    s10 symbol skip 0
 @    s10 line type 1
 @    s10 line linestyle 1
-@    s10 line linewidth 1.0
-@    s10 line color 11
+@    s10 line linewidth 3.0
+@    s10 line color 2
 @    s10 line pattern 1
 @    s10 baseline type 0
 @    s10 baseline off
@@ -808,7 +808,7 @@
 @    s10 avalue offset 0.000000 , 0.000000
 @    s10 errorbar on
 @    s10 errorbar place both
-@    s10 errorbar color 11
+@    s10 errorbar color 2
 @    s10 errorbar pattern 1
 @    s10 errorbar size 1.000000
 @    s10 errorbar linewidth 1.0
@@ -817,9 +817,9 @@
 @    s10 errorbar riser linestyle 1
 @    s10 errorbar riser clip off
 @    s10 errorbar riser clip length 0.100000
-@    s10 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
-@    s10 legend  ""
-@    s11 hidden false
+@    s10 comment "0.1.agr"
+@    s10 legend  "y = -2.70 + 0.04x, t \x\cN\C(0.6,1)"
+@    s11 hidden true
 @    s11 type xy
 @    s11 symbol 0
 @    s11 symbol size 1.000000
@@ -866,9 +866,9 @@
 @    s11 errorbar riser linestyle 1
 @    s11 errorbar riser clip off
 @    s11 errorbar riser clip length 0.100000
-@    s11 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s11 comment "0.1.agr"
 @    s11 legend  ""
-@    s12 hidden false
+@    s12 hidden true
 @    s12 type xy
 @    s12 symbol 0
 @    s12 symbol size 1.000000
@@ -915,9 +915,9 @@
 @    s12 errorbar riser linestyle 1
 @    s12 errorbar riser clip off
 @    s12 errorbar riser clip length 0.100000
-@    s12 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s12 comment "0.1.agr"
 @    s12 legend  ""
-@    s13 hidden false
+@    s13 hidden true
 @    s13 type xy
 @    s13 symbol 0
 @    s13 symbol size 1.000000
@@ -964,9 +964,9 @@
 @    s13 errorbar riser linestyle 1
 @    s13 errorbar riser clip off
 @    s13 errorbar riser clip length 0.100000
-@    s13 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s13 comment "0.1.agr"
 @    s13 legend  ""
-@    s14 hidden false
+@    s14 hidden true
 @    s14 type xy
 @    s14 symbol 0
 @    s14 symbol size 1.000000
@@ -1013,9 +1013,9 @@
 @    s14 errorbar riser linestyle 1
 @    s14 errorbar riser clip off
 @    s14 errorbar riser clip length 0.100000
-@    s14 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s14 comment "0.1.agr"
 @    s14 legend  ""
-@    s15 hidden false
+@    s15 hidden true
 @    s15 type xy
 @    s15 symbol 0
 @    s15 symbol size 1.000000
@@ -1062,9 +1062,9 @@
 @    s15 errorbar riser linestyle 1
 @    s15 errorbar riser clip off
 @    s15 errorbar riser clip length 0.100000
-@    s15 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s15 comment "0.1.agr"
 @    s15 legend  ""
-@    s16 hidden false
+@    s16 hidden true
 @    s16 type xy
 @    s16 symbol 0
 @    s16 symbol size 1.000000
@@ -1111,9 +1111,9 @@
 @    s16 errorbar riser linestyle 1
 @    s16 errorbar riser clip off
 @    s16 errorbar riser clip length 0.100000
-@    s16 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s16 comment "0.1.agr"
 @    s16 legend  ""
-@    s17 hidden false
+@    s17 hidden true
 @    s17 type xy
 @    s17 symbol 0
 @    s17 symbol size 1.000000
@@ -1160,9 +1160,9 @@
 @    s17 errorbar riser linestyle 1
 @    s17 errorbar riser clip off
 @    s17 errorbar riser clip length 0.100000
-@    s17 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s17 comment "0.1.agr"
 @    s17 legend  ""
-@    s18 hidden false
+@    s18 hidden true
 @    s18 type xy
 @    s18 symbol 0
 @    s18 symbol size 1.000000
@@ -1209,9 +1209,9 @@
 @    s18 errorbar riser linestyle 1
 @    s18 errorbar riser clip off
 @    s18 errorbar riser clip length 0.100000
-@    s18 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s18 comment "0.1.agr"
 @    s18 legend  ""
-@    s19 hidden false
+@    s19 hidden true
 @    s19 type xy
 @    s19 symbol 0
 @    s19 symbol size 1.000000
@@ -1258,8 +1258,155 @@
 @    s19 errorbar riser linestyle 1
 @    s19 errorbar riser clip off
 @    s19 errorbar riser clip length 0.100000
-@    s19 comment "/home/juanchoflo/Escritorio/UNAL2016-2/HerramientasComputacionales/ProyectoIntermedio/Datos/0.1/0.1.agr"
+@    s19 comment "0.1.agr"
 @    s19 legend  ""
+@    s20 hidden true
+@    s20 type xy
+@    s20 symbol 0
+@    s20 symbol size 1.000000
+@    s20 symbol color 3
+@    s20 symbol pattern 1
+@    s20 symbol fill color 3
+@    s20 symbol fill pattern 0
+@    s20 symbol linewidth 1.0
+@    s20 symbol linestyle 1
+@    s20 symbol char 65
+@    s20 symbol char font 0
+@    s20 symbol skip 0
+@    s20 line type 1
+@    s20 line linestyle 1
+@    s20 line linewidth 1.0
+@    s20 line color 3
+@    s20 line pattern 1
+@    s20 baseline type 0
+@    s20 baseline off
+@    s20 dropline off
+@    s20 fill type 0
+@    s20 fill rule 0
+@    s20 fill color 1
+@    s20 fill pattern 1
+@    s20 avalue off
+@    s20 avalue type 2
+@    s20 avalue char size 1.000000
+@    s20 avalue font 0
+@    s20 avalue color 1
+@    s20 avalue rot 0
+@    s20 avalue format general
+@    s20 avalue prec 3
+@    s20 avalue prepend ""
+@    s20 avalue append ""
+@    s20 avalue offset 0.000000 , 0.000000
+@    s20 errorbar on
+@    s20 errorbar place both
+@    s20 errorbar color 3
+@    s20 errorbar pattern 1
+@    s20 errorbar size 1.000000
+@    s20 errorbar linewidth 1.0
+@    s20 errorbar linestyle 1
+@    s20 errorbar riser linewidth 1.0
+@    s20 errorbar riser linestyle 1
+@    s20 errorbar riser clip off
+@    s20 errorbar riser clip length 0.100000
+@    s20 comment "0.1.agr"
+@    s20 legend  ""
+@    s21 hidden true
+@    s21 type xy
+@    s21 symbol 0
+@    s21 symbol size 0.750000
+@    s21 symbol color 2
+@    s21 symbol pattern 1
+@    s21 symbol fill color 2
+@    s21 symbol fill pattern 0
+@    s21 symbol linewidth 3.0
+@    s21 symbol linestyle 1
+@    s21 symbol char 65
+@    s21 symbol char font 0
+@    s21 symbol skip 0
+@    s21 line type 1
+@    s21 line linestyle 1
+@    s21 line linewidth 3.0
+@    s21 line color 2
+@    s21 line pattern 1
+@    s21 baseline type 0
+@    s21 baseline off
+@    s21 dropline off
+@    s21 fill type 0
+@    s21 fill rule 0
+@    s21 fill color 1
+@    s21 fill pattern 1
+@    s21 avalue off
+@    s21 avalue type 2
+@    s21 avalue char size 1.000000
+@    s21 avalue font 0
+@    s21 avalue color 1
+@    s21 avalue rot 0
+@    s21 avalue format general
+@    s21 avalue prec 3
+@    s21 avalue prepend ""
+@    s21 avalue append ""
+@    s21 avalue offset 0.000000 , 0.000000
+@    s21 errorbar on
+@    s21 errorbar place both
+@    s21 errorbar color 2
+@    s21 errorbar pattern 1
+@    s21 errorbar size 1.000000
+@    s21 errorbar linewidth 1.0
+@    s21 errorbar linestyle 1
+@    s21 errorbar riser linewidth 1.0
+@    s21 errorbar riser linestyle 1
+@    s21 errorbar riser clip off
+@    s21 errorbar riser clip length 0.100000
+@    s21 comment "0.1.agr"
+@    s21 legend  "copy of set G0.S10"
+@    s22 hidden true
+@    s22 type xy
+@    s22 symbol 0
+@    s22 symbol size 1.000000
+@    s22 symbol color 5
+@    s22 symbol pattern 1
+@    s22 symbol fill color 5
+@    s22 symbol fill pattern 0
+@    s22 symbol linewidth 1.0
+@    s22 symbol linestyle 1
+@    s22 symbol char 65
+@    s22 symbol char font 0
+@    s22 symbol skip 0
+@    s22 line type 1
+@    s22 line linestyle 1
+@    s22 line linewidth 1.0
+@    s22 line color 5
+@    s22 line pattern 1
+@    s22 baseline type 0
+@    s22 baseline off
+@    s22 dropline off
+@    s22 fill type 0
+@    s22 fill rule 0
+@    s22 fill color 1
+@    s22 fill pattern 1
+@    s22 avalue off
+@    s22 avalue type 2
+@    s22 avalue char size 1.000000
+@    s22 avalue font 0
+@    s22 avalue color 1
+@    s22 avalue rot 0
+@    s22 avalue format general
+@    s22 avalue prec 3
+@    s22 avalue prepend ""
+@    s22 avalue append ""
+@    s22 avalue offset 0.000000 , 0.000000
+@    s22 errorbar on
+@    s22 errorbar place both
+@    s22 errorbar color 5
+@    s22 errorbar pattern 1
+@    s22 errorbar size 1.000000
+@    s22 errorbar linewidth 1.0
+@    s22 errorbar linestyle 1
+@    s22 errorbar riser linewidth 1.0
+@    s22 errorbar riser linestyle 1
+@    s22 errorbar riser clip off
+@    s22 errorbar riser clip length 0.100000
+@    s22 comment "0.1.agr"
+@    s22 legend  ""
 @target G0.S0
 @type xy
 0.01 -5.07897
@@ -2414,4 +2561,192 @@
 0.97 -2.7205855
 0.98 -2.7204149
 0.99 -2.7202444
+&
+@target G0.S20
+@type xy
+0.01 -2.9238001
+0.02 -2.9209495
+0.03 -2.918099
+0.04 -2.9152484
+0.05 -2.9123978
+0.06 -2.9095473
+0.07 -2.9066967
+0.08 -2.9038461
+0.09 -2.9009956
+0.1 -2.898145
+0.11 -2.8952944
+0.12 -2.8924439
+0.13 -2.8895933
+0.14 -2.8867428
+0.15 -2.8838922
+0.16 -2.8810416
+0.17 -2.8781911
+0.18 -2.8753405
+0.19 -2.8724899
+0.2 -2.8696394
+0.21 -2.8667888
+0.22 -2.8639382
+0.23 -2.8610877
+0.24 -2.8582371
+0.25 -2.8553865
+0.26 -2.852536
+0.27 -2.8496854
+0.28 -2.8468348
+0.29 -2.8439843
+0.3 -2.8411337
+0.31 -2.8382832
+0.32 -2.8354326
+0.33 -2.832582
+0.34 -2.8297315
+0.35 -2.8268809
+0.36 -2.8240303
+0.37 -2.8211798
+0.38 -2.8183292
+0.39 -2.8154786
+0.4 -2.8126281
+0.41 -2.8097775
+0.42 -2.8069269
+0.43 -2.8040764
+0.44 -2.8012258
+0.45 -2.7983752
+0.46 -2.7955247
+0.47 -2.7926741
+0.48 -2.7898236
+0.49 -2.786973
+0.5 -2.7841224
+0.51 -2.7812719
+0.52 -2.7784213
+0.53 -2.7755707
+0.54 -2.7727202
+0.55 -2.7698696
+0.56 -2.767019
+0.57 -2.7641685
+0.58 -2.7613179
+0.59 -2.7584673
+0.6 -2.7556168
+0.61 -2.7527662
+0.62 -2.7499156
+0.63 -2.7470651
+0.64 -2.7442145
+0.65 -2.741364
+0.66 -2.7385134
+0.67 -2.7356628
+0.68 -2.7328123
+0.69 -2.7299617
+0.7 -2.7271111
+0.71 -2.7242606
+0.72 -2.72141
+0.73 -2.7185594
+0.74 -2.7157089
+0.75 -2.7128583
+0.76 -2.7100077
+0.77 -2.7071572
+0.78 -2.7043066
+0.79 -2.701456
+0.8 -2.6986055
+0.81 -2.6957549
+0.82 -2.6929044
+0.83 -2.6900538
+0.84 -2.6872032
+0.85 -2.6843527
+0.86 -2.6815021
+0.87 -2.6786515
+0.88 -2.675801
+0.89 -2.6729504
+0.9 -2.6700998
+0.91 -2.6672493
+0.92 -2.6643987
+0.93 -2.6615481
+0.94 -2.6586976
+0.95 -2.655847
+0.96 -2.6529964
+0.97 -2.6501459
+0.98 -2.6472953
+0.99 -2.6444448
+&
+@target G0.S21
+@type xy
+0.6 -2.7301597
+0.61 -2.7305819
+0.62 -2.7310041
+0.63 -2.7314264
+0.64 -2.7318486
+0.65 -2.7322708
+0.66 -2.7326931
+0.67 -2.7331153
+0.68 -2.7335375
+0.69 -2.7339598
+0.7 -2.734382
+0.71 -2.7348042
+0.72 -2.7352265
+0.73 -2.7356487
+0.74 -2.736071
+0.75 -2.7364932
+0.76 -2.7369154
+0.77 -2.7373377
+0.78 -2.7377599
+0.79 -2.7381821
+0.8 -2.7386044
+0.81 -2.7390266
+0.82 -2.7394488
+0.83 -2.7398711
+0.84 -2.7402933
+0.85 -2.7407155
+0.86 -2.7411378
+0.87 -2.74156
+0.88 -2.7419823
+0.89 -2.7424045
+0.9 -2.7428267
+0.91 -2.743249
+0.92 -2.7436712
+0.93 -2.7440934
+0.94 -2.7445157
+0.95 -2.7449379
+0.96 -2.7453601
+0.97 -2.7457824
+0.98 -2.7462046
+0.99 -2.7466268
+&
+@target G0.S22
+@type xy
+0.6 -2.7301597
+0.61 -2.7305819
+0.62 -2.7310041
+0.63 -2.7314264
+0.64 -2.7318486
+0.65 -2.7322708
+0.66 -2.7326931
+0.67 -2.7331153
+0.68 -2.7335375
+0.69 -2.7339598
+0.7 -2.734382
+0.71 -2.7348042
+0.72 -2.7352265
+0.73 -2.7356487
+0.74 -2.736071
+0.75 -2.7364932
+0.76 -2.7369154
+0.77 -2.7373377
+0.78 -2.7377599
+0.79 -2.7381821
+0.8 -2.7386044
+0.81 -2.7390266
+0.82 -2.7394488
+0.83 -2.7398711
+0.84 -2.7402933
+0.85 -2.7407155
+0.86 -2.7411378
+0.87 -2.74156
+0.88 -2.7419823
+0.89 -2.7424045
+0.9 -2.7428267
+0.91 -2.743249
+0.92 -2.7436712
+0.93 -2.7440934
+0.94 -2.7445157
+0.95 -2.7449379
+0.96 -2.7453601
+0.97 -2.7457824
+0.98 -2.7462046
+0.99 -2.7466268
 &
