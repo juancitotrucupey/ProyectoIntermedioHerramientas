@@ -7,7 +7,8 @@
 const int N=100000;
 
 //Eta es la probabilidad de que se fragmente alguno de los grupos
-const double Eta=0.5; 
+const double Eta=0.01;
+
 using namespace std;
 
 class M19{
@@ -19,14 +20,14 @@ private:
   int CantHist;
   int error;
   //En cada celda se guarda la información del poder de ataque de la unidad, se organizan de izquierda a derecha (mayor a menor), si no hay unidades en la celda se pone un cero.
-  // int *n = malloc((N+3)*sizeof(int));
-  //double *hist = malloc((N+3)*sizeof(double));
-  //double *loghist = malloc((N+3)*sizeof(double));
-   int n[N+3];
-  double hist[N][2];
-  double loghist[N][2];
+  int* n;
+  double *hist1;
+  double *hist2;
+  double *loghist1;
+  double *loghist2;
   
 	public:
+  M19(void);
   void Inicie(void);
   void Evolucione(Crandom & Ran);
   void Reorganice(void);
@@ -34,13 +35,19 @@ private:
   void Histograma(void);
   void FitLinear(void);
  };
-
+M19::M19(void){
+n=new int[N+3];
+hist1=new double[N];
+hist2=new double[N];
+loghist1=new double[N];
+loghist2=new double[N];
+}
 void M19::Inicie(void){
   //Se inicia con N unidades con poder de ataque 1
   for(int i=0;i<N;i++) {
     n[i]=1;
-    hist[i][0]=hist[i][1]=0.0;
-    loghist[i][0]=hist[i][1]=0.0;
+    hist1[i]=hist2[i]=0.0;
+    loghist1[i]=hist2[i]=0.0;
   }
   //n[N] indica si se separó un unidad o se unio con otra. n[N+1] si se separó indica la posicion de la inicial que se separó, si se unieron indica uno de los lugares de las que se unieron. n[N+2] si se unieron indica el lugar de la segunda unidad que participó
   n[N]=n[N+1]=n[N+2]=3;
@@ -141,8 +148,8 @@ void M19::Histograma(void){
   //Creación del histograma
   for(ii=Tam;ii>0;ii--){
     while(n[jj]==ii){
-    hist[kk][0]=ii;
-    hist[kk][1]+=1;
+    hist1[kk]=ii;
+    hist2[kk]+=1;
     jj++;
     Cambio=true;
     }
@@ -154,14 +161,22 @@ void M19::Histograma(void){
   CantHist=kk;
   
   for(ii=0;ii<CantHist;ii++){
-    hist[ii][1]/=N;
-    if(hist[ii][1]<=1e-4){
+    hist2[ii]/=N;
+    //Poner solo los puntos con una frecuencia mayor a 10^{-4}
+    /*
+    if(hist2[ii]<=1e-4){
       error+=1;}
+    */ }
+
+  //Quitar los grupos desde el mayor hasta que alguno aparezca más de una vez
+  for(ii=0;ii<CantHist;ii++){
+    error+=1;
+    if(hist2[ii]>1.0/N){ii=CantHist;}
   }
   
   for(ii=0;ii<CantHist;ii++){
-    loghist[ii][0]=log(hist[ii][0]);
-    loghist[ii][1]=log(hist[ii][1]);
+    loghist1[ii]=log(hist1[ii]);
+    loghist2[ii]=log(hist2[ii]);
      }
 }
 //Realiza el ajuste lineal de los datos
@@ -170,9 +185,8 @@ void M19::FitLinear(void){
   double x[Dim],y[Dim];
   int ii;
   for(ii=error;ii<CantHist;ii++){
-    x[ii-error]=loghist[ii][0];
-    y[ii-error]=loghist[ii][1];
-    // cout<< x[ii-error]<<" "<< y[ii-error]<<endl;
+    x[ii-error]=loghist1[ii];
+    y[ii-error]=loghist2[ii];
     }
   //Función que permite hacer la linealización
   double Slope,Intercept, Coefficient;
@@ -181,13 +195,13 @@ void M19::FitLinear(void){
     cout<<Slope<<" "<<Intercept<<" "<<" "<<Coefficient<<endl;
   //Reiniciar los histogramas
     for(ii=0;ii<N;ii++) {
-    hist[ii][0]=hist[ii][1]=0;
-    loghist[ii][0]=hist[ii][1]=0;
+    hist1[ii]=hist2[ii]=0;
+    loghist1[ii]=loghist2[ii]=0;
   }
   }
 int main(void){
   M19 Frente;
-  Crandom ran2(1);
+  Crandom ran2(3);
   int t,tmax=1000000;//Tiempo maximo de la simulación
   double tt;
   Frente.Inicie();
@@ -195,7 +209,7 @@ int main(void){
      Frente.Evolucione(ran2);
      Frente.Reorganice();
     t=(int)tt;
-    if((t>500)&&(t%1000)==0){
+    if((t>=10000)&&(t%10000)==0){
       cout<<tt/tmax<<" ";
       	Frente.Histograma();
        	Frente.FitLinear();
