@@ -7,7 +7,7 @@
 const int N=100000;
 
 //Eta es la probabilidad de que se fragmente alguno de los grupos
-const double Eta=0.01;
+const double Eta=0.5;
 
 using namespace std;
 
@@ -203,7 +203,7 @@ void M19::FitLinear(void){
   }
 int main(void){
   M19 Frente;
-  Crandom ran2(0);
+  Crandom ran2(4);
   int t,tmax=1000000;//Tiempo maximo de la simulación
   double tt;
   Frente.Inicie();
